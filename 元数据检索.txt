@@ -1,14 +1,14 @@
 设置元数据检索的key以及value：
-doscli --access_key carson --secret_key carson mdsearch s3://桶名 --mdsearch-config-set=' x-amz-meta-fruit;string'
+s3cmd --access_key carson --secret_key carson mdsearch s3://桶名 --mdsearch-config-set=' x-amz-meta-fruit;string'
 获取当前设置的key以及value：
-doscli --access_key carson --secret_key carson mdsearch s3://桶名 --mdsearch-config-get
+s3cmd --access_key carson --secret_key carson mdsearch s3://桶名 --mdsearch-config-get
 
 给某个对象赋值给指定的元数据检索对象：
-doscli --access_key carson --secret_key carson modify s3://桶名/aa --add-header x-amz-meta-fruit:对象名
+s3cmd --access_key carson --secret_key carson modify s3://桶名/aa --add-header x-amz-meta-fruit:对象名
 查询指定的对象：
-doscli --access_key carson --secret_key carson mdsearch  s3://桶名 --mdsearch-query=''x-amz-meta-fruit==对象名'
+s3cmd --access_key carson --secret_key carson mdsearch  s3://桶名 --mdsearch-query=''x-amz-meta-fruit==对象名'
 删除设置的元数据检索：
-doscli --access_key carson --secret_key carson mdsearch s3://桶名 --mdsearch-config-delete
+s3cmd --access_key carson --secret_key carson mdsearch s3://桶名 --mdsearch-config-delete
 删除某个对象的元数据信息命令：
-doscli modify s3://tt02/aa --access_key carson --secret_key carson --remove-header=x-amz-meta-color
+s3cmd modify s3://tt02/aa --access_key carson --secret_key carson --remove-header=x-amz-meta-color
 使用9009端口  --host="localhost:9009"
